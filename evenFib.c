@@ -9,10 +9,10 @@ int main(){
 	
 	int i = 0;
 
-	// int sum1 = 1;
+	static int sum1 = 0;
 	// int sum2 = 0;
 
-	for(i = 0; i < 10; i++ ){	// change to sum2 later on
+	for(i = 0; c < 4000000; i++ ){	// change to sum2 later on
 		
 		// find c
 		// switch b to a
@@ -20,9 +20,14 @@ int main(){
 
 		// find c
 		c = a + b;
+
+		// even valued terms sum
+		c % 2 ?: (sum1 += c);
 		
+
 		//print and check 		
-  		printf("%d\t%d\t%d\n", a, b, c);
+  		printf("%d\t%d\t%d\t%d\n", a, b, c, sum1);
+	
 
 		// switchero
 		a = b;
